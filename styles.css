@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+    font-size: 16px;
+    font-family: "Josefin Sans", sans-serif;
+}
+:root {
+    --Desaturated-Red: hsl(0, 36%, 70%);
+    --Soft-Red: hsl(0, 93%, 68%);
+    --Dark-Grayish-Red: hsl(0, 6%, 24%);
+    --Linear-1 : 135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%);
+    --Linear-2 : 135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%);
+}
+body {
+    /* background: url(./design/mobile-design.jpg) no-repeat; */
+    /* background: url(./design/desktop-design.jpg) no-repeat; */
+    /* background: url(./design/active-states.jpg) no-repeat; */
+    background: linear-gradient(var(--Linear-1));
+}
+main {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+.top-mobile {
+    padding: 1.6rem 0rem 1.35rem 0.18rem;
+    align-self: flex-start;
+}
+.top-mobile > img {
+    scale: 0.65;
+}
+.content {
+    padding: 3.8rem 2rem 5.7rem;
+    gap: 1rem;
+    display: flex;
+    flex-flow: column;
+}
+.top-desktop {
+    display: none;
+}
+.content > h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.7rem;
+    text-align: center;
+    color: var(--Desaturated-Red);
+}
+h1 > div{
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 2.7rem;
+    color: var(--Dark-Grayish-Red);
+}
+p {
+    font-size: 0.89rem;
+    line-height: 1.35rem;
+    text-align: center;
+    font-weight: 400;
+    color: var(--Desaturated-Red);
+}
+form {
+    margin: 1rem 0rem 0rem 0rem;
+    border: 1px solid var(--Desaturated-Red);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10rem;
+    width: 100%;
+}
+input {
+    font-size: 0.89rem;
+    margin: 0 0 0 1.4rem ;
+    background: transparent;
+    width: 13rem;
+    border: 0;
+    outline: 0;
+}
+input::placeholder {
+    color: var(--Desaturated-Red);
+}
+.error {
+    display: none;
+    right: 25%;
+    position: absolute;
+}
+
+button {
+    cursor: pointer;
+    border: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.82rem 1.6rem;
+    border-radius: 10rem;
+    background: linear-gradient(var(--Linear-2));
+}
+button:hover {
+    opacity: 0.6;
+    transition: all .3s ease-in-out;
+    box-shadow: 0 0.5rem 1rem var(--Soft-Red);
+}
+.msg {
+    color: var(--Soft-Red);
+    margin-left: 1.5rem;
+    width: fit-content;
+    text-align: start;
+    justify-self: flex-start;
+    display: none;
+}
+.msg-done {
+    color: rgb(3, 204, 40);
+    text-align: start;
+    margin-left: 1.5rem;
+    display: none;
+}
+.show {
+    display: block;
+}
+.disktop-photo {
+    display: none;
+}
+.attribution {
+    text-align: center;
+    margin: 10rem auto;
+    width: fit-content;
+    color: var(--Dark-Grayish-Red);
+}
+.attribution:hover {
+    animation: pop 0.5s forwards ease-out;
+}
+@keyframes pop {
+    100% {
+        scale: 1.5;
+        padding: 1rem 2rem;
+        border: 0.5rem solid var(--Desaturated-Red);
+        border-radius: 0.8rem;
+        box-shadow: 0.5rem 0.5rem var(--Dark-Grayish-Red);
+    }
+}
+.attribution a {
+    color: var(--Desaturated-Red);
+    text-decoration: none;
+}
+@media screen and (min-width: 1024px) {
+    .top-mobile, .mobile-photo{
+        display: none;
+    }
+    .top-desktop, .disktop-photo {
+        display: block;
+    }
+    main {
+        flex-flow: row;
+        align-items: flex-start;
+    }
+    .content {
+        background: url(./images/bg-pattern-desktop.svg) no-repeat;
+        background-size: cover;
+        background-position: center bottom;
+        align-items: flex-start;
+        padding: 4rem 13.7rem 0rem 10.3rem;
+        gap: 0rem;
+    }
+    .content > h1 {
+        text-align: start;
+        font-size: 4rem;
+        margin: 8.3rem 0 0 0;
+        letter-spacing: 1.1rem;
+    }
+    h1 > div {
+        font-size: 4rem;
+        line-height: 4.4rem;
+    }
+    p {
+        margin: 1.25rem 0 0 0;
+        text-align: start;
+        font-size: 1rem;
+        font-weight: 520;
+        line-height: 1.75rem;
+    }
+    form {
+        margin-top: 2.45rem;
+    }
+    button {
+        padding: 1.08rem 2.75rem;
+    }
+    input {
+        margin-left: 2rem;
+        font-size: 1rem;
+        width: 18rem;
+    }
+    .error{
+        right: 15%;
+    }
+}
